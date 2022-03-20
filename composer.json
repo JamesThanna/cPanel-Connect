@@ -1,0 +1,54 @@
+{
+    "name": "jameshanna/cpanelconnector",
+    "description": "cPanel connector",
+    "keywords": [
+        "jameshanna",
+        "cpanelconnector"
+    ],
+    "homepage": "https://github.com/jameshanna/cpanelconnector",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "James Hanna",
+            "email": "james@jameshanna.co.uk",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "illuminate/support": "^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jameshanna\\Cpanelconnector\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Jameshanna\\Cpanelconnector\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jameshanna\\Cpanelconnector\\CpanelconnectorServiceProvider"
+            ],
+            "aliases": {
+                "Cpanelconnector": "Jameshanna\\Cpanelconnector\\CpanelconnectorFacade"
+            }
+        }
+    }
+}
